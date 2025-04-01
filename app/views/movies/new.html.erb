@@ -10,9 +10,10 @@
       Title
     </label>-->
 
-    <%= label_tag :title_box, "Title" %>
+    <%= label_tag :title %>
 
-    <%= text_field_tag :query_title, @the_movie.title, { id: "title_box" } %>
+    <%#= text_field_tag :title, @the_movie.title%>
+    <%= text_field_tag "movie[title]", @the_movie.title%>
 
     <!--<input type="text" id="title_box" name="query_title" value="<%##= @the_movie.title %>">-->
   </div>
@@ -25,13 +26,31 @@
     <%= label_tag :description_box, "Description" %>
 
     <!--<textarea id="description_box" name="query_description" rows="3"><%##= @the_movie.description %></textarea>-->
-    <%= text_field_tag :query_description, @the_movie.description, id: "description_box", rows: "3" %>
+    <%#= text_area_tag :query_description, @the_movie.description, id: "description_box", rows: 3 %>
+    <%= text_area_tag "movie[description]", @the_movie.description, id: "description_box", rows: 3 %>
+
   </div>
 
-  <button>
+  <!--<button>
     Create Movie
-  </button>
+  </button>-->
+  <%= button_tag "Create movie" %>
 <% end %>
+
+
+
+
+<div></div>
+
+<!--<form>
+  <input name="zebra[giraffe]">
+  <input name="zebra[elephant]">
+  #creates nested hash-->
+<!--
+  <button>Submit</button>
+</form>-->
+
+
 <!--<form action="/movies" method="post" data-turbo="false">
   <input name="authenticity_token" value="<%#= form_authenticity_token %>" type="hidden">
 
