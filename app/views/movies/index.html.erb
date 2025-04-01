@@ -2,10 +2,19 @@
   List of all movies
 </h1>
 
+<h2>
+  <%#= details_path(42) %>
+  <%#= details_url(42) %> 
+</h2>
+
 <hr>
 
 <div>
-  <a href="/movies/new">New movie</a>
+  <!--<a href="<%#= new_movie_path %>">New movie</a>-->
+  <%#= link_to "Go to Google", "https://www.google.com"%>
+
+  <%= link_to "Add a new movie", new_movie_path %>
+
 </div>
 
 <hr>
@@ -58,9 +67,10 @@
     </td>
 
     <td>
-      <a href="/movies/<%= a_movie.id %>">
-        Show details
-      </a>
+      <%#= link_to "Show details", movie_path(a_movie) %>
+      <% # Movie.first.class.downcase + "_url" %>
+      <%# link_to "Show details", "https://www.google.com" %>
+      <%= link_to "Show details", a_movie %>
     </td>
   </tr>
   <% end %>
